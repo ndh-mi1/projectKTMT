@@ -1,0 +1,59 @@
+# Build
+**/build/
+**/bin/
+**/*.o
+**/*.obj
+**/*.exe
+**/*.out
+**/*.a
+**/*.so
+**/*.dll
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# LaTeX temporary files
+*.aux
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# IDE / OS
+.vs/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Simulation / FPGA
+*.vcd
+*.vvp
+*.fst
+*.jou
+*.log
+*.pb
+*.wdb
+*.xpr
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.srcs/
+xsim.dir/
+vivado_pid*
+
+# Large / local results (keep CSV headers tracked)
+results/*.vcd
+results/waves/
+*.gtkw.bak
+
+# Colab / CUDA local junk
+*.cubin
+*.fatbin
