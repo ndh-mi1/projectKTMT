@@ -37,11 +37,11 @@ Cùng một bài toán nhân ma trận vuông $C = A \times B$, nhóm tiến hà
 
 | Vai | Họ và tên | MSSV | Module phụ trách | Trách nhiệm chính | Thuyết trình |
 |---|---|---|---|---|---|
-| **P1** | Trịnh Nhật Nam | 202418949 | `cpu/` | Interface chung, CPU Naive, Cache Tiling, Harness đo thời gian, CSV `results/cpu_bench.csv` | Phần I và IV.1–IV.2 |
-| **P2** | Lê Duy Khương | 202418926 | `cpu/` | CPU OpenMP, SIMD/AVX2, Ablation study, CSV `results/cpu_opt_bench.csv`; **Gom và xuất bản báo cáo nộp** | Phần II |
-| **P3** | Nguyễn Hoàng Long | 202418938 | `gpu/` | Kernel CUDA naive, cuBLAS, đo $T_{\text{kernel}}$ vs $T_{\text{E2E}}$ trên Colab, xác định $N^*$, CSV `results/gpu_bench.csv` | Phần III |
-| **P4** | Nguyễn Đình Huy | 202418918 | `systolic/` | **Trưởng nhóm:** Thiết kế RTL mảng $8 \times 8$ WS, testbench, mô phỏng Icarus, mô hình chu kỳ $C(N)$, CSV `results/systolic_cycles.csv`, điều phối | *Không thuyết trình* |
-| **P5** | Nguyễn Thanh Cương | 202418857 | `scripts/` | Script đọc CSV, vẽ biểu đồ so sánh vào `results/plots/`, xây dựng ma trận đánh đổi, phân tích giới hạn | Phần IV.3–IV.6 và Phần V |
+| **P1** | Trịnh Nhật Nam | 202418949 | `cpu/` | Interface chung, CPU Naive, Cache Tiling, Harness đo thời gian, CSV `results/cpu_bench.csv` | **Phần I** |
+| **P2** | Lê Duy Khương | 202418926 | `cpu/` | CPU OpenMP, SIMD/AVX2, Ablation study, CSV `results/cpu_opt_bench.csv`; **Gom và xuất bản báo cáo nộp** | **Phần II** |
+| **P3** | Nguyễn Hoàng Long | 202418938 | `gpu/` | Kernel CUDA naive, cuBLAS, đo $T_{\text{kernel}}$ vs $T_{\text{E2E}}$ trên Colab, xác định $N^*$, CSV `results/gpu_bench.csv` | **Phần III** |
+| **P4** | Nguyễn Đình Huy | 202418918 | `systolic/` | **Trưởng nhóm:** Thiết kế RTL mảng $8 \times 8$ WS, testbench, mô phỏng Icarus, mô hình chu kỳ $C(N)$, CSV `results/systolic_cycles.csv`, điều phối | **Phần IV** |
+| **P5** | Nguyễn Thanh Cương | 202418857 | `scripts/` | Script đọc CSV, vẽ biểu đồ so sánh vào `results/plots/`, xây dựng ma trận đánh đổi, phân tích giới hạn | **Phần V** |
 
 ---
 
@@ -98,19 +98,18 @@ Báo cáo Đồ án Kiến trúc Máy tính (MI4344) — Dự kiến: 16–22 tr
 ## 5. Phân công Slide (Canva) & Thuyết trình
 
 - **Nền tảng làm slide:** Soạn thảo chung trên **[Canva Slide Nhóm 15](https://canva.link/r64u2jb5pdawwcw)**.
+- **Thời lượng bảo vệ quy định:** **30 phút trình bày** + **15 phút trao đổi (Q&A)**.
 - **Quy tắc phân công slide vs thuyết trình:**
-  - Mỗi thành viên tự thiết kế cụm slide tương ứng với phần báo cáo của mình.
-  - **Lưu ý đặc biệt ở Phần IV (Systolic Array):** **Huy làm slide** (vì Huy nắm rõ cấu trúc phần cứng và waveform), **Nam và Cương trình bày thay Huy** trước hội đồng.
+  - Mỗi thành viên tự thiết kế cụm slide tương ứng và tự thuyết trình bảo vệ phần báo cáo của mình trước hội đồng.
 
-| Lượt | Nội dung trình bày | Người làm Slide (Canva) | Người thuyết trình | Khối lượng tương ứng |
+| Lượt | Nội dung trình bày | Người làm Slide (Canva) | Người thuyết trình | Trọng tâm nội dung |
 |---|---|---|---|---|
-| **1** | **Phần I:** Bối cảnh, mục tiêu, metrics, CPU nền (naive & tiled) | **Nam** | **Nam** | 3–4 trang báo cáo |
-| **2** | **Phần II:** CPU tối ưu OpenMP, SIMD, Ablation study (Câu 1) | **Khương** | **Khương** | 3–4 trang báo cáo |
-| **3** | **Phần III:** GPU CUDA, cuBLAS, chi phí copy PCIe, điểm hòa vốn $N^*$ (Câu 2) | **Long** | **Long** | 3–4 trang báo cáo |
-| **4** | **Phần IV.1–IV.2:** Ý tưởng Systolic, luồng dữ liệu Weight-Stationary, thiết kế PE & mảng 8×8 | **Huy** | **Nam**  | ~1.5–2 trang báo cáo |
-| **5** | **Phần IV.3–IV.6:** Testbench, waveform GTKWave, chu kỳ $C(N)$, utilization (Câu 3) | **Huy** | **Cương** | ~1.5–2 trang báo cáo |
-| **6** | **Phần V:** Bảng ma trận đánh đổi 3 kiến trúc, hạn chế, kết luận chung (Câu 4) | **Cương** | **Cương** | 2–3 trang báo cáo |
-| **7** | **Hỏi đáp (Q&A):** Trả lời câu hỏi của giảng viên và hội đồng phản biện | Cả nhóm | Người phụ trách phần được hỏi | Toàn bộ đồ án |
+| **1** | **Phần I:** Bối cảnh, mục tiêu, metrics, CPU nền (naive & tiled) | **Nam** | **Nam** | Memory Wall, công thức metrics, đo đạc baseline CPU |
+| **2** | **Phần II:** CPU tối ưu OpenMP, SIMD, Ablation study (Câu 1) | **Khương** | **Khương** | Khai thác đa lõi, vector hóa AVX2, trả lời Câu hỏi 1 |
+| **3** | **Phần III:** GPU CUDA, cuBLAS, chi phí copy PCIe, điểm hòa vốn $N^*$ (Câu 2) | **Long** | **Long** | Xử lý song song SIMT, bóc tách thời gian PCIe vs Kernel, trả lời Câu hỏi 2 |
+| **4** | **Phần IV:** Systolic Array chuyên dụng mảng 8×8 WS (Câu 3) | **Huy** | **Huy** | Vi kiến trúc PE, mảng 8×8, skewing, waveform GTKWave, chu kỳ $C(N)$, trả lời Câu hỏi 3 |
+| **5** | **Phần V:** Bảng ma trận đánh đổi 3 kiến trúc, hạn chế, kết luận chung (Câu 4) | **Cương** | **Cương** | Trade-off Matrix toàn diện 5 tiêu chí, hạn chế thực nghiệm, trả lời Câu hỏi 4 |
+| **6** | **Hỏi đáp (Q&A - 15 phút):** Trao đổi & phản biện với Hội đồng | Cả nhóm | Người phụ trách phần được hỏi | Toàn bộ đồ án |
 
 ---
 

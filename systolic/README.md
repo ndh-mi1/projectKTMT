@@ -69,8 +69,8 @@ Mở file `wave.vcd` sinh ra bằng GTKWave để chụp ảnh dạng sóng ph�
 
 ---
 
-## 5. Chuẩn bị ôn tập cho Nam và Cương
-Vì Nam và Cương sẽ thay mặt Huy thuyết trình Phần IV trước hội đồng, Huy soạn sẵn 5 câu hỏi trọng tâm kèm gợi ý trả lời ngắn (1–2 dòng) ở cuối phần báo cáo trên Google Docs:
+## 5. Bộ 5 câu hỏi phản biện trọng tâm Phần IV (Huy tự tin bảo vệ trước Hội đồng)
+Huy chuẩn bị sẵn sàng câu trả lời cho 5 câu hỏi phản biện cốt lõi của Phần IV để làm chủ phần bảo vệ của mình:
 1. *Tại sao lại chọn kiến trúc Weight-Stationary mà không phải Output-Stationary?*
 2. *Tại sao mảng lại chọn $8 \times 8$ mà không phải $16 \times 16$ hay lớn hơn?*
 3. *Hiện tượng skewing (lệch pha) đường chéo là gì, tại sao bắt buộc phải có?*

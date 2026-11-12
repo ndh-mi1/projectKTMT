@@ -61,6 +61,7 @@ Cương tổng hợp số liệu để hoàn thiện bảng đánh đổi trong 
 ---
 
 ## 5. Nhiệm vụ thuyết trình của Cương
-Cương phụ trách thuyết trình 2 phần liên tiếp:
-1. **Phần IV.3–IV.6:** Trình bày thay Huy về kết quả mô phỏng systolic array, phân tích giản đồ sóng GTKWave, xu hướng chu kỳ và trả lời Câu hỏi 3.
-2. **Phần V:** Trình bày toàn bộ bảng đánh đổi 3 kiến trúc, phân tích các giới hạn thực nghiệm (đo thật vs mô phỏng, float32 vs int16) và kết luận chung của đồ án.
+Cương phụ trách thuyết trình **Phần V (So sánh chéo, Đánh đổi & Kết luận)**:
+1. Trình bày bảng ma trận đánh đổi 3 kiến trúc (Trade-off Matrix) dựa trên 5 tiêu chí định lượng.
+2. Phân tích sâu sắc bài toán đánh đổi giữa Tính linh hoạt (CPU) và Hiệu suất cao (Systolic/GPU), trả lời dứt khoát Câu hỏi 4.
+3. Phân tích các hạn chế thực nghiệm (đo thật vs mô phỏng chu kỳ, float32 vs int16) và bài học kinh nghiệm của đồ án.

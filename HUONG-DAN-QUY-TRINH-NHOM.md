@@ -18,11 +18,11 @@
 
 | Thành viên | MSSV | Module phụ trách | Trách nhiệm báo cáo | Phân công thuyết trình |
 |---|---|---|---|---|
-| **Trịnh Nhật Nam** | 202418949 | `cpu/` | Viết Phần I | Thuyết trình Phần I và IV.1–IV.2 |
-| **Lê Duy Khương** | 202418926 | `cpu/` | Viết Phần II; Gom và xuất bản nộp PDF | Thuyết trình Phần II |
-| **Nguyễn Hoàng Long** | 202418938 | `gpu/` | Viết Phần III | Thuyết trình Phần III |
-| **Nguyễn Đình Huy** | 202418918 | `systolic/` | Trưởng nhóm: Viết Phần IV, làm slide Phần IV | *Không thuyết trình* |
-| **Nguyễn Thanh Cương** | 202418857 | `scripts/` | Viết Phần V | Thuyết trình Phần IV.3–IV.6 và Phần V |
+| **Trịnh Nhật Nam** | 202418949 | `cpu/` | Viết Phần I | Thuyết trình **Phần I** |
+| **Lê Duy Khương** | 202418926 | `cpu/` | Viết Phần II; Gom và xuất bản nộp PDF | Thuyết trình **Phần II** |
+| **Nguyễn Hoàng Long** | 202418938 | `gpu/` | Viết Phần III | Thuyết trình **Phần III** |
+| **Nguyễn Đình Huy** | 202418918 | `systolic/` | Trưởng nhóm: Viết Phần IV, điều phối | Thuyết trình **Phần IV** |
+| **Nguyễn Thanh Cương** | 202418857 | `scripts/` | Viết Phần V | Thuyết trình **Phần V** |
 
 
 ---
@@ -209,20 +209,21 @@ Link làm việc: https://docs.google.com/document/d/1TXFgWydyJ7rMBT3fG0oTWzDbLh
 Link làm việc: https://canva.link/r64u2jb5pdawwcw
 
 ## 3.1. Quy chuẩn thiết kế slide
+- **Thời lượng bảo vệ quy định:** **30 phút trình bày** + **15 phút trao đổi (Q&A)**.
 - **Nội dung súc tích:** Slide là bản tóm lược trực quan của báo cáo, không copy nguyên cả đoạn văn dài. Mỗi slide tối đa **3 ý chính** kết hợp cùng 1 biểu đồ hoặc bảng số liệu.
 - **Tính đồng nhất:** Cả nhóm dùng chung font chữ, cỡ chữ tiêu đề/nội dung và bảng màu (palette). Khương hoặc Cương thiết kế mẫu slide mở đầu, các bạn khác follow theo.
 - **Ghi danh:** Đặt tên người phụ trách ở góc dưới slide để thuận tiện theo dõi khi bảo vệ.
+- **Tự chủ:** Của ai người đó tự làm slide và tự thuyết trình bảo vệ phần mình phụ trách trước hội đồng.
 
 ## 3.2. Bảng phân công chi tiết giữa Làm Slide và Thuyết trình
 *(Được đồng bộ chuẩn xác 100% với Mục 5 trong README.md)*
 
-| Lượt | Nội dung trình bày | Người làm Slide (Canva) | Người thuyết trình | Khối lượng tương ứng |
+| Lượt | Nội dung trình bày | Người làm Slide (Canva) | Người thuyết trình | Trọng tâm nội dung |
 |---|---|---|---|---|
-| **1** | **Phần I:** Bối cảnh, mục tiêu, metrics, CPU nền (naive & tiled) | **Nam** | **Nam** | 3–4 trang báo cáo |
-| **2** | **Phần II:** CPU tối ưu OpenMP, SIMD, Ablation study (Câu 1) | **Khương** | **Khương** | 3–4 trang báo cáo |
-| **3** | **Phần III:** GPU CUDA, cuBLAS, chi phí copy PCIe, điểm hòa vốn $N^*$ (Câu 2) | **Long** | **Long** | 3–4 trang báo cáo |
-| **4** | **Phần IV.1–IV.2:** Ý tưởng Systolic, luồng dữ liệu Weight-Stationary, thiết kế PE & mảng 8×8 | **Huy** | **Nam**  | ~1.5–2 trang báo cáo |
-| **5** | **Phần IV.3–IV.6:** Testbench, waveform GTKWave, chu kỳ $C(N)$, utilization (Câu 3) | **Huy** | **Cương** | ~1.5–2 trang báo cáo |
-| **6** | **Phần V:** Bảng ma trận đánh đổi 3 kiến trúc, hạn chế, kết luận chung (Câu 4) | **Cương** | **Cương** | 2–3 trang báo cáo |
-| **7** | **Hỏi đáp (Q&A):** Trả lời câu hỏi của giảng viên và hội đồng phản biện | Cả nhóm | Người phụ trách phần được hỏi | Toàn bộ đồ án |
+| **1** | **Phần I:** Bối cảnh, mục tiêu, metrics, CPU nền (naive & tiled) | **Nam** | **Nam** | Memory Wall, công thức metrics, đo đạc baseline CPU |
+| **2** | **Phần II:** CPU tối ưu OpenMP, SIMD, Ablation study (Câu 1) | **Khương** | **Khương** | Khai thác đa lõi, vector hóa AVX2, trả lời Câu hỏi 1 |
+| **3** | **Phần III:** GPU CUDA, cuBLAS, chi phí copy PCIe, điểm hòa vốn $N^*$ (Câu 2) | **Long** | **Long** | Xử lý song song SIMT, bóc tách thời gian PCIe vs Kernel, trả lời Câu hỏi 2 |
+| **4** | **Phần IV:** Systolic Array chuyên dụng mảng 8×8 WS (Câu 3) | **Huy** | **Huy** | Vi kiến trúc PE, mảng 8×8, skewing, waveform GTKWave, chu kỳ $C(N)$, trả lời Câu hỏi 3 |
+| **5** | **Phần V:** Bảng ma trận đánh đổi 3 kiến trúc, hạn chế, kết luận chung (Câu 4) | **Cương** | **Cương** | Trade-off Matrix toàn diện 5 tiêu chí, hạn chế thực nghiệm, trả lời Câu hỏi 4 |
+| **6** | **Hỏi đáp (Q&A - 15 phút):** Trao đổi & phản biện với Hội đồng | Cả nhóm | Người phụ trách phần được hỏi | Toàn bộ đồ án |
 
