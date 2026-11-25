@@ -6,24 +6,24 @@
 
 ## Link làm việc chung
 
-| Loại | Link | Quyền hạn yêu cầu |
+| Loại | Link / Địa chỉ | Quyền hạn & Ghi chú |
 |---|---|---|
 | **Google Docs (Báo cáo)** | https://docs.google.com/document/d/1TXFgWydyJ7rMBT3fG0oTWzDbLhph4TGgAmQufeilvIE/edit?usp=sharing | **Anyone with the link, Editor** |
 | **Canva (Slide)** | https://canva.link/r64u2jb5pdawwcw | **Can edit** |
-| **GitHub repo (Public)** | https://github.com/ndh-mi1/projectKTMT | Public repo, thêm 4 bạn làm Collaborators |
+| **GitHub repo (Public)** | https://github.com/ndh-mi1/projectKTMT | Public repo, cả 5 thành viên có quyền Collaborators |
+| **Nộp bài & Lịch thuyết trình (MS Teams)** | Kênh lớp MI4344 — xem `GroupProject_381.xlsx` | Nộp bản mềm qua Teams **trước 24/12/2026** |
 
 ---
 
 ## Phân vai thành viên
 
-| Thành viên | MSSV | Module phụ trách | Trách nhiệm báo cáo | Phân công thuyết trình |
+| Thành viên | MSSV | Module phụ trách | Trách nhiệm báo cáo (Chuẩn hóa theo đề cương) | Phân công thuyết trình (30p + 15p Q&A) |
 |---|---|---|---|---|
-| **Trịnh Nhật Nam** | 202418949 | `cpu/` | Viết Phần I | Thuyết trình **Phần I** |
-| **Lê Duy Khương** | 202418926 | `cpu/` | Viết Phần II; Gom và xuất bản nộp PDF | Thuyết trình **Phần II** |
-| **Nguyễn Hoàng Long** | 202418938 | `gpu/` | Viết Phần III | Thuyết trình **Phần III** |
-| **Nguyễn Đình Huy** | 202418918 | `systolic/` | Trưởng nhóm: Viết Phần IV, điều phối | Thuyết trình **Phần IV** |
-| **Nguyễn Thanh Cương** | 202418857 | `scripts/` | Viết Phần V | Thuyết trình **Phần V** |
-
+| **Trịnh Nhật Nam** | 202418949 | `cpu/` | Chủ trì **Chương 1 (Giới thiệu)** + phần **CPU nền** (Chương 2–3) | Lượt 1: Giới thiệu, Yêu cầu & CPU nền |
+| **Lê Duy Khương** | 202418926 | `cpu/` | Phần **CPU tối ưu** (Chương 2–3); **Gom bài, chuẩn hóa APA & IEEE `[1]`, xuất PDF nộp** | Lượt 2: Tối ưu CPU & Demo `bench_cpu` |
+| **Nguyễn Hoàng Long** | 202418938 | `gpu/` | Phần **GPU CUDA & cuBLAS** (Chương 2–3) | Lượt 3: Tăng tốc GPU & Demo Colab |
+| **Nguyễn Đình Huy** | 202418918 | `systolic/`, `docs/` | **Trưởng nhóm:** Phần **Systolic Array Verilog HDL** (Chương 2–3), **Trang đóng góp** & **Phụ lục Kế hoạch** | Lượt 4: Systolic Array HDL, Lý do 8×8 & Demo RTL/GTKWave |
+| **Nguyễn Thanh Cương** | 202418857 | `scripts/` | Tổng hợp công cụ, **Ma trận đánh đổi 3 kiến trúc**, Hạn chế & Kết luận (Chương 2–3) | Lượt 5: So sánh chéo, Lý do phạm vi & Kết luận |
 
 ---
 
@@ -31,11 +31,13 @@
 
 | File | Mục đích sử dụng |
 |---|---|
-| **[README.md](README.md)** | Trang chủ: Tổng quan đề tài, 4 câu hỏi nghiên cứu, mục lục báo cáo chi tiết 5 phần, phân công thuyết trình, cấu trúc thư mục repo. |
-| **[HUONG-DAN-QUY-TRINH-NHOM.md](HUONG-DAN-QUY-TRINH-NHOM.md)** | File này: Hướng dẫn Git thực chiến, phân quyền file, quy chuẩn báo cáo Docs và slide Canva. |
+| **[README.md](README.md)** | Trang chủ: Tổng quan, Yêu cầu, Mục lục báo cáo chuẩn APA/IEEE, Phân công thuyết trình 45p, Cấu trúc repo. |
+| **[HUONG-DAN-QUY-TRINH-NHOM.md](HUONG-DAN-QUY-TRINH-NHOM.md)** | File này: Hướng dẫn Git, Phân quyền, Chuẩn APA & IEEE, Slide Demo, Lịch trình Tuần 13–18 & Checklist nộp Teams. |
 | **[METRICS.md](METRICS.md)** | Quy chuẩn tính toán FLOPs, GFLOPS, chu kỳ và schema các cột CSV (bắt buộc tuân thủ khi xuất kết quả). |
 | **[Ly_thuyet_can_thiet_MI4344.pdf](Ly_thuyet_can_thiet_MI4344.pdf)** | Tài liệu lý thuyết kiến trúc máy tính 12 trang (đọc trước khi bắt tay vào code). |
-| **README trong từng module** | `cpu/README.md`, `gpu/README.md`, `systolic/README.md`, `scripts/README.md` hướng dẫn cụ thể cách code, test và xuất số liệu. |
+| **[docs/KE-HOACH-LAM-VIEC-NHOM.md](docs/KE-HOACH-LAM-VIEC-NHOM.md)** | Bản Kế hoạch làm việc chi tiết Tuần 1–18 của Nhóm 15 (sẵn sàng chép vào **Phụ lục A** của báo cáo). |
+| **[docs/MAU-BAO-CAO-APA-IEEE.md](docs/MAU-BAO-CAO-APA-IEEE.md)** | Khung mẫu **1–2 trang Tóm tắt đóng góp**, hướng dẫn định dạng **APA** & danh mục trích dẫn **IEEE `[1]`**. |
+| **README trong từng module** | `cpu/README.md`, `gpu/README.md`, `systolic/README.md`, `scripts/README.md` hướng dẫn code, test và xuất số liệu. |
 
 ---
 
@@ -93,10 +95,14 @@ git push
 
 ```
 projectKTMT/
-├── README.md                          Huy       trang chủ (mục lục chi tiết, phân công)
+├── README.md                          Huy       trang chủ (mục lục APA/IEEE, phân công)
 ├── HUONG-DAN-QUY-TRINH-NHOM.md        Huy       file này
 ├── METRICS.md                         Chỉ đọc   chuẩn cột CSV và công thức
 ├── Ly_thuyet_can_thiet_MI4344.pdf     Chỉ đọc   tài liệu lý thuyết nền tảng
+│
+├── docs/                              Huy       tài liệu kế hoạch & mẫu chuẩn APA/IEEE
+│   ├── KE-HOACH-LAM-VIEC-NHOM.md      Huy       kế hoạch Tuần 1-18 (cho Phụ lục A)
+│   └── MAU-BAO-CAO-APA-IEEE.md        Huy       mẫu trang đóng góp & hướng dẫn APA/IEEE
 │
 ├── cpu/                               MODULE CPU (Nam & Khương)
 │   ├── README.md                      Nam/Khương hướng dẫn yêu cầu code, build và test
@@ -135,7 +141,7 @@ projectKTMT/
 | **Nam** | `cpu/include/`, `cpu/Makefile`, `cpu/README.md`, `cpu/src/matmul_naive.c`, `matmul_tiled.c`, `bench_main.c`; `results/cpu_bench.csv`, `results/env_nam.json` | `matmul_openmp.c`, `matmul_simd.c` (của Khương); `gpu/`; `systolic/` |
 | **Khương** | `cpu/src/matmul_openmp.c`, `cpu/src/matmul_simd.c`; `results/cpu_opt_bench.csv`, `results/env_khuong.json` | các file CPU của Nam; `gpu/`; `systolic/`. Cần sửa file chung (`Makefile`, `bench_main.c`) thì nhắn Nam |
 | **Long** | toàn bộ `gpu/`; `results/gpu_bench.csv`, `results/env_long.json` | `cpu/`; `systolic/` |
-| **Huy** | toàn bộ `systolic/`; `results/systolic_cycles.csv`, `results/env_huy.json`; `README.md`, `HUONG-DAN-QUY-TRINH-NHOM.md`, `METRICS.md`, `.gitignore` | `cpu/`; `gpu/` |
+| **Huy** | toàn bộ `systolic/`, `docs/`; `results/systolic_cycles.csv`, `results/env_huy.json`; `README.md`, `HUONG-DAN-QUY-TRINH-NHOM.md`, `METRICS.md`, `.gitignore` | `cpu/`; `gpu/` |
 | **Cương** | `scripts/`; `results/plots/`; `results/env_cuong.json` | `cpu/`; `gpu/`; `systolic/`; các file CSV của người khác (chỉ đọc) |
 
 ## 1.5. Tình huống thường gặp & Cách xử lý
@@ -148,82 +154,90 @@ projectKTMT/
 | `Permission denied (403)` khi push | Chưa chấp nhận lời mời làm Collaborator | Mở email kiểm tra thư mời từ GitHub và bấm **Accept invitation**. |
 
 
-# 2. Hướng dẫn viết báo cáo (Google Docs)
+# 2. Hướng dẫn viết Báo cáo cuối kỳ chuẩn APA & IEEE (Google Docs)
 
 Link làm việc: https://docs.google.com/document/d/1TXFgWydyJ7rMBT3fG0oTWzDbLhph4TGgAmQufeilvIE/edit?usp=sharing
 
-## 2.1. Quy tắc viết bài
-1. **Độc lập và tự chủ:** Mỗi thành viên chỉ soạn thảo trong phần được phân công. Sử dụng đúng định dạng Heading 1 (tên phần lớn) và Heading 2 (các tiểu mục con) để Google Docs tự động sinh mục lục chuẩn.
-2. **Góp ý văn minh:** Muốn sửa hoặc góp ý phần của bạn khác, bắt buộc dùng chế độ **Suggesting** hoặc đặt **Comment**, không xóa/sửa trực tiếp.
-3. **Số liệu thực tế:** Mọi con số đưa vào báo cáo phải trích xuất chính xác từ các file CSV trong `results/`, tuyệt đối không ước lượng cảm tính.
-4. **Chèn hình ảnh:** Ảnh giản đồ sóng GTKWave và biểu đồ phân tích lấy từ `results/plots/` chèn trực tiếp vào Docs kèm chú thích (Hình X.Y).
-5. **Trách nhiệm của Khương (Gom bài):** Khương phụ trách trang bìa, mục lục, tóm tắt, chuẩn hóa font chữ/căn lề toàn bài, đánh số thứ tự hình/bảng nhất quán và xuất file PDF nộp. Khương không viết hộ nội dung kỹ thuật của người khác.
+## 2.1. Quy tắc viết bài, Định dạng APA & Trích dẫn IEEE
+1. **Định dạng chuẩn APA ([APA Paper Format](https://apastyle.apa.org/style-grammar-guidelines/paper-format)):**
+   - **Lề & Font chữ:** Căn lề **1 inch (2.54 cm)** cả 4 cạnh; sử dụng thống nhất font **Times New Roman 12pt** (code dùng font `Consolas` / `Courier New` 10pt); đánh số trang góc trên bên phải bắt đầu từ trang bìa.
+   - **Giãn dòng & Đoạn văn:** Toàn văn bản dùng khoảng cách dòng nhất quán theo chuẩn APA (chi tiết định dạng Title Page, Heading Level 1–3, căn chỉnh Bảng & Hình xem tại [`docs/MAU-BAO-CAO-APA-IEEE.md`](docs/MAU-BAO-CAO-APA-IEEE.md)).
+   - **Bảng và Hình theo APA:** Số thứ tự và tên Bảng (`Bảng 1`, *Tên bảng*) / Hình (`Hình 1`, *Tên hình*) đặt gọn phía trên trước Bảng/Hình, có nguồn/ghi chú (*Note.*) bên dưới nếu cần.
+2. **Trích dẫn & Tài liệu tham khảo chuẩn IEEE ([IEEE Citation Guide](https://pitt.libguides.com/citationhelp/ieee)):**
+   - Dùng kiểu **đánh số trong ngoặc vuông `[1]`, `[2]`** tăng dần theo **đúng thứ tự xuất hiện lần đầu** trong văn bản (ví dụ: *"Kiến trúc Systolic Array được Kung và Leiserson đề xuất năm 1982 [1]."*).
+   - Mục **Tài liệu tham khảo** liệt kê theo thứ tự số `[1]`, `[2]`... Không dùng trích dẫn kiểu `(Author, Year)` của APA cho tài liệu tham khảo.
+3. **BẮT BUỘC có 1–2 trang Tóm tắt đóng góp thành viên:** Đặt ngay đầu báo cáo (trước nội dung chính), mô tả đóng góp từng người **theo thứ tự từ cao đến thấp** (dùng mẫu trong `docs/MAU-BAO-CAO-APA-IEEE.md`).
+4. **Độc lập, trung thực số liệu & Góp ý văn minh:** Mỗi bạn viết đúng phần mình trên Docs; mọi con số phải lấy trực tiếp từ `results/*.csv`; góp ý phần bạn khác dùng chế độ **Suggesting** hoặc **Comment**.
+5. **Trách nhiệm của Khương (Gom bài):** Kiểm tra chuẩn hóa APA toàn bài, hợp nhất đánh số `[1], [2]` của Tài liệu tham khảo, đánh số Heading/Hình/Bảng thống nhất và xuất bản PDF + DOCX nộp cuối cùng.
 
-## 2.2. Cấu trúc mục lục báo cáo chi tiết & Phân chia viết bài
+## 2.2. Cấu trúc Mục lục Báo cáo cuối kỳ (Khớp 100% yêu cầu Giảng viên)
 *(Được đồng bộ chuẩn xác 100% với Mục 4 trong README.md)*
 
-| Mục | Tiêu đề chi tiết | Người viết | Nội dung trọng tâm & Hình/Bảng bắt buộc | Số trang |
-|---|---|---|---|---|
-| | **Trang bìa, Mục lục, Danh mục hình/bảng** | **Khương** | Bìa chuẩn quy cách HUST, mục lục tự động sinh từ Heading. | 2 trang |
-| | **Tóm tắt (Abstract)** | **Khương** | Tóm tắt toàn bộ nghiên cứu trong 5–7 câu: mục tiêu, phương pháp, kết quả nổi bật và kết luận chính (viết sau cùng). | 0.5 trang |
-| **I** | **GIỚI THIỆU VÀ NỀN TẢNG ĐO ĐẠC** | **Nam** | Đặt nền tảng cho toàn bộ báo cáo: | **3–4 trang** |
-| I.1 | Bối cảnh & Lý do chọn bài toán nhân ma trận | Nam | Ứng dụng trong AI/Graphics/Khoa học dữ liệu; đặc trưng truy cập bộ nhớ. | |
-| I.2 | Mục tiêu nghiên cứu & 4 câu hỏi nghiên cứu | Nam | Nêu rõ 4 câu hỏi nghiên cứu của đề tài. | |
-| I.3 | Cơ sở lý thuyết đo: Công thức FLOPs & GFLOPS | Nam | Công thức $2N^3$, định nghĩa GFLOPS; nguyên tắc không so sánh trực tiếp ms thật với chu kỳ mô phỏng. | |
-| I.4 | Môi trường thực nghiệm CPU | Nam | Bảng cấu hình phần cứng (CPU, cache L1/L2/L3, RAM), OS, compiler flags (`-O3 -fopenmp`). | |
-| I.5 | Thực nghiệm CPU nền: Naive vs Cache Tiling | Nam | Trình bày thuật toán naive $i-j-k$ và tiled $ii-jj-kk$; phân tích hiện tượng Cache Miss; **Bảng số liệu thời gian & GFLOPS ($N \in [64, 2048]$)**. | |
-| I.6 | Tóm tắt nền tảng & Điểm nghẽn bộ nhớ | Nam | Đồ thị thời gian Naive vs Tiled; nhận xét nút thắt Memory-bound. | |
-| **II** | **TỐI ƯU HÓA TRÊN CPU (Trả lời Câu hỏi 1)** | **Khương** | Khảo sát các kỹ thuật khai thác triệt để vi kiến trúc CPU: | **3–4 trang** |
-| II.1 | Các kỹ thuật tối ưu phần cứng trên CPU | Khương | Nguyên lý song song hóa đa lõi (OpenMP) và song song mức lệnh/dữ liệu (SIMD, vector registers). | |
-| II.2 | Thiết lập thí nghiệm bóc tách (Ablation Study) | Khương | Giữ cố định kích thước $N$, đo qua từng nấc: Naive $\to$ Tiled $\to$ OpenMP $\to$ SIMD. | |
-| II.3 | Kết quả thực nghiệm và phân tích định lượng | Khương | **Bảng Ablation Study** (thời gian, GFLOPS, Speedup so với Naive); **Biểu đồ GFLOPS theo $N$**. | |
-| II.4 | Phân tích đóng góp của từng kỹ thuật | Khương | Tác động của Cache Tiling (giảm miss), OpenMP (tận dụng đa nhân), SIMD (tăng thông lượng FMA). | |
-| II.5 | Kết luận & Trả lời dứt khoát Câu hỏi 1 | Khương | Trả lời: Tăng tốc được tối đa bao nhiêu lần; kỹ thuật nào đóng góp lớn nhất. | |
-| **III** | **TĂNG TỐC TRÊN GPU (Trả lời Câu hỏi 2)** | **Long** | Đánh giá kiến trúc xử lý song song khối lượng lớn: | **3–4 trang** |
-| III.1 | Kiến trúc GPU & Môi trường đo Colab | Long | Cấu hình GPU (Tesla T4), SMs, CUDA cores, phương pháp đo bằng `cudaEvent_t`. | |
-| III.2 | Cài đặt Kernel Naive và cuBLAS | Long | Mô hình luồng SIMT, cấu hình Grid/Block, cách gọi thư viện chuẩn `cublasSgemm`. | |
-| III.3 | Đo lường chi tiết: $T_{\text{kernel}}$ vs $T_{\text{E2E}}$ | Long | Phân tích sơ đồ thời gian: $T_{\text{H2D}}$ (copy sang GPU), $T_{\text{kernel}}$, $T_{\text{D2H}}$ (copy về CPU), $T_{\text{E2E}}$; **Bảng số liệu GPU**. | |
-| III.4 | Phân tích điểm hòa vốn $N^*$ so với CPU | Long | So sánh GPU với bản CPU tốt nhất; xác định $N^*_{\text{kernel}}$ và $N^*_{\text{E2E}}$; **Biểu đồ thời gian log-log**. | |
-| III.5 | Kết luận & Trả lời dứt khoát Câu hỏi 2 | Long | Trả lời: Khi nào GPU thắng CPU; chi phí truyền dữ liệu PCIe ảnh hưởng thế nào đến bài toán nhỏ. | |
-| **IV** | **SYSTOLIC ARRAY CHUYÊN DỤNG (Trả lời Câu hỏi 3)** | **Huy** | Thiết kế phần cứng ASIC/TPU-like trên Verilog: | **3–4 trang** |
-| IV.1 | Ý tưởng kiến trúc & Luồng dữ liệu Weight-Stationary | Huy | Nguyên lý mảng dòng tâm thất; so sánh Weight-Stationary vs Output-Stationary; sơ đồ luồng dữ liệu 2D. | |
-| IV.2 | Thiết kế vi kiến trúc PE và Mảng $8 \times 8$ | Huy | Cấu trúc PE (`int16` MAC, `int32` accumulator); sơ đồ kết nối lưới $8 \times 8$; cơ chế nạp trọng số `load_w`. | |
-| IV.3 | Mô phỏng RTL & Phân tích Waveform | Huy | Quy trình mô phỏng Icarus Verilog; kỹ thuật skewing đầu vào; **Ảnh chụp giản đồ sóng GTKWave minh họa quá trình tính**. | |
-| IV.4 | Số chu kỳ thực thi & Hiệu suất sử dụng PE | Huy | Xây dựng công thức chu kỳ $C(N)$ cho tile và ma trận $N \times N$; **Bảng số chu kỳ và PE Utilization theo $N$**; đồ thị chu kỳ. | |
-| IV.5 | (Tùy chọn) Đánh giá tổng hợp phần cứng | Huy | Ước lượng diện tích và tài nguyên FPGA (LUT, DSP, BRAM) nếu tổng hợp qua Vivado. | |
-| IV.6 | Kết luận & Trả lời dứt khoát Câu hỏi 3 | Huy | Trả lời: Vì sao mảng đạt thông lượng cao dù cấu trúc đơn giản; bộ 5 câu hỏi Q&A phục vụ phản biện. | |
-| **V** | **SO SÁNH CHÉO, ĐÁNH ĐỔI & KẾT LUẬN (Trả lời Câu hỏi 4)** | **Cương** | Bức tranh toàn cảnh về 3 triết lý kiến trúc máy tính: | **2–3 trang** |
-| V.1 | Tổng hợp kết quả đo đạc từ 3 nền tảng | Cương | Bảng tổng hợp các metric chính của CPU, GPU và Systolic Array. | |
-| V.2 | Bảng ma trận đánh đổi (Trade-off Matrix) | Cương | **Bảng đánh đổi toàn diện 5 tiêu chí**: Thông lượng đỉnh, Độ linh hoạt, Chi phí truyền dữ liệu, Độ phức tạp phát triển, Kích thước bài toán tối ưu. | |
-| V.3 | Trả lời dứt khoát Câu hỏi 4 | Cương | Phân tích sâu sắc bài toán đánh đổi giữa Tính linh hoạt (CPU) và Hiệu suất cao (Systolic/GPU). | |
-| V.4 | Phân tích các hạn chế của đồ án | Cương | Sự khác biệt giữa đo thực tế (ms) và mô phỏng chu kỳ; sự khác biệt kiểu số `float32` vs `int16`; biến động GPU trên Colab. | |
-| V.5 | Kết luận chung & Bài học kinh nghiệm | Cương | Tóm tắt 3 kết luận then chốt của toàn bộ đồ án. | |
-| V.6 | Hướng phát triển mở rộng | Cương | Mở rộng kiểu dữ liệu (FP8/BF16), tích hợp DMA/double buffering, triển khai board FPGA thực tế. | |
-| | **Tài liệu tham khảo** | **Khương** | Định dạng chuẩn IEEE/ACM, trích dẫn tài liệu kiến trúc máy tính, bài báo Google TPU, tài liệu CUDA. | 1 trang |
-| | **Phụ lục** | **Khương** | Link repo GitHub, cấu hình máy các thành viên (`env_*.json`), toàn văn bảng số liệu CSV gốc, hướng dẫn tái lập kết quả. | 2 trang |
+| Mục | Tiêu đề chuẩn Báo cáo cuối kỳ | Người viết | Nội dung trọng tâm & Ánh xạ kỹ thuật |
+|---|---|---|---|
+| **Đầu bài** | **Trang bìa chuẩn APA, Mục lục, Danh mục Hình/Bảng** | **Khương** | Title page chuẩn APA + HUST; mục lục tự động sinh từ Heading. |
+| **Bắt buộc (1–2 trang)** | **Tóm tắt đóng góp của từng thành viên (từ cao đến thấp)** | **Huy & Khương** *(cả nhóm chốt)* | **Đặt trước nội dung chính:** Xếp hạng đóng góp từ cao đến thấp; mô tả vai trò, code/RTL, đo đạc/mô phỏng, viết báo cáo & thuyết trình. |
+| **Tóm tắt** | **Tóm tắt (Abstract)** | **Khương** | Tóm tắt 5–7 câu về mục tiêu, phương pháp, kết quả chính và kết luận. |
+| **Chương 1** | **GIỚI THIỆU** *(Phần I cũ)* | **Nam** *(+ Huy rà soát Systolic)* | • **1.1 Tên & Mô tả dự án:** Tổng quan bài toán nhân ma trận trên 3 kiến trúc (CPU, GPU, và phần cứng Systolic Array thiết kế/mô hình hóa/mô phỏng).<br>• **1.2 Đề tài, Bối cảnh & 4 câu hỏi nghiên cứu:** Nút thắt Memory Wall ($2N^3$ FLOPs vs $2N^2$ phần tử) và 4 câu hỏi nghiên cứu.<br>• **1.3 Các yêu cầu của dự án:** Yêu cầu chức năng, độ chính xác (`float32` $\le 10^{-3}$, `int16` bit-exact), dải $N$ và lý do phạm vi triển khai.<br>• **1.4 Cơ sở lý thuyết đo đạc:** Công thức FLOPs, GFLOPS, Cycles, Utilization, quy tắc so sánh công bằng. |
+| **Chương 2** | **PHƯƠNG PHÁP LUẬN** *(Kiến trúc, HDL & Công cụ triển khai)* | **Theo module** | • **2.1 Tổng quan cấu trúc & Công cụ lựa chọn (Cương + Huy):** Kiến trúc tổng thể sản phẩm, lựa chọn ngôn ngữ/công cụ (`C11/gcc/OpenMP/AVX2`, `CUDA/cuBLAS`, **Verilog HDL + `iverilog`/`GTKWave`**, `Python`) và lý do triển khai một phần/toàn bộ.<br>• **2.2 Thiết kế & Tối ưu trên CPU (Nam & Khương):** Cấu trúc Naive, Cache Tiling, OpenMP, SIMD AVX2/FMA ($i-k-j$) và harness `bench_main.c`.<br>• **2.3 Thiết kế & Tăng tốc trên GPU (Long):** Mô hình SIMT, Kernel CUDA naive, `cuBLAS`, đo `cudaEvent_t` ($T_{\text{H2D}}/T_{\text{kernel}}/T_{\text{D2H}}$).<br>• **2.4 Thiết kế phần cứng Systolic Array bằng Verilog HDL (Huy — *tương ứng Mục IV.1–IV.2*):** Luồng Weight-Stationary, lý do $8 \times 8$, vi kiến trúc PE (`pe.v`), ghép lưới 2D (`systolic_array.v`), Data Skewing & Wavefront.<br>• **2.5 Phương pháp tổng hợp & Đánh giá chéo (Cương):** Pipeline đọc CSV (`scripts/`) & khung Trade-off Matrix 5 tiêu chí. |
+| **Chương 3** | **KẾT QUẢ VÀ BÀN LUẬN** *(Thực nghiệm, Mô phỏng & Đánh giá)* | **Theo module** | • **3.1 Kết quả & Phân tích CPU (Nam & Khương — *Câu 1*):** Bảng & đồ thị Naive vs Tiled ($N \in [64, 2048]$), bảng Ablation Study & Speedup.<br>• **3.2 Kết quả & Phân tích GPU (Long — *Câu 2*):** Bảng $T_{\text{kernel}}$ vs $T_{\text{E2E}}$ trên Colab Tesla T4, đồ thị log-log GPU vs CPU, điểm hòa vốn $N^*_{\text{kernel}}, N^*_{\text{E2E}}$.<br>• **3.3 Kết quả mô phỏng RTL & Chu kỳ Systolic (Huy — *tương ứng Mục IV.3–IV.6, Câu 3*):** Testbench `tb_systolic.v`, đối chiếu bit-exact `matmul_ref.py`, **ảnh sóng GTKWave**, mô hình $C(N)$ & Utilization, *(tùy chọn)* ước lượng Vivado.<br>• **3.4 So sánh chéo & Trade-off Matrix 3 kiến trúc (Cương — *Câu 4*):** Bảng tổng hợp, Ma trận đánh đổi 5 tiêu chí, phân tích Linh hoạt $\leftrightarrow$ Hiệu suất.<br>• **3.5 Đánh giá làm chủ công cụ, Hạn chế & Hướng mở rộng (Cương + nhóm):** Chứng minh làm chủ công nghệ/công cụ, các hạn chế thực nghiệm và hướng phát triển. |
+| **Tham khảo** | **TÀI LIỆU THAM KHẢO** | **Khương** *(cả nhóm gửi)* | Danh mục đầy đủ trích dẫn theo **IEEE numerical citation style** (`[1]`, `[2]`...). |
+| **Phụ lục** | **PHỤ LỤC** | **Huy & Khương** | • **Phụ lục A (Bắt buộc):** **Kế hoạch làm việc của nhóm** (chép từ `docs/KE-HOACH-LAM-VIEC-NHOM.md`).<br>• **Phụ lục B:** Cấu hình phần cứng các thành viên (`env_*.json`).<br>• **Phụ lục C:** Link GitHub, toàn văn CSV gốc & Hướng dẫn tái lập kết quả. |
 
----
 
-# 3. Hướng dẫn làm Slide (Canva) & Phân công thuyết trình
+# 3. Hướng dẫn làm Slide (Canva) & Thuyết trình (~45 phút)
 
 Link làm việc: https://canva.link/r64u2jb5pdawwcw
 
-## 3.1. Quy chuẩn thiết kế slide
-- **Thời lượng bảo vệ quy định:** **30 phút trình bày** + **15 phút trao đổi (Q&A)**.
-- **Nội dung súc tích:** Slide là bản tóm lược trực quan của báo cáo, không copy nguyên cả đoạn văn dài. Mỗi slide tối đa **3 ý chính** kết hợp cùng 1 biểu đồ hoặc bảng số liệu.
-- **Tính đồng nhất:** Cả nhóm dùng chung font chữ, cỡ chữ tiêu đề/nội dung và bảng màu (palette). Khương hoặc Cương thiết kế mẫu slide mở đầu, các bạn khác follow theo.
-- **Ghi danh:** Đặt tên người phụ trách ở góc dưới slide để thuận tiện theo dõi khi bảo vệ.
-- **Tự chủ:** Của ai người đó tự làm slide và tự thuyết trình bảo vệ phần mình phụ trách trước hội đồng.
+## 3.1. Quy chuẩn thiết kế slide & 4 yêu cầu bắt buộc
+- **Thời lượng & Hình thức:** **~45 phút** gồm **30 phút trình bày** + **15 phút trao đổi (Q&A)**; lịch trình bày xem trong `GroupProject_381.xlsx` trên Teams. **100% thành viên (5/5) đều phải trình bày.**
+- **Bốn nội dung BẮT BUỘC phải xuất hiện trong Slide & Lời nói:**
+  1. **Bối cảnh và chủ đề của dự án.**
+  2. **Bài toán và các giải pháp.**
+  3. **Lý do triển khai toàn bộ hoặc một phần sản phẩm** *(giải thích rõ tại sao chỉ triển khai RTL lõi $8 \times 8$ WS mô phỏng trên Icarus chứ không làm full chip TPU/DMA hay board FPGA; và phạm vi thực nghiệm CPU/GPU).*
+  4. **Trình bày / mô phỏng sản phẩm (Demo):** Chạy/minh họa thực tế chương trình C CPU, Colab GPU và **chạy mô phỏng `iverilog` + xem sóng GTKWave / minh họa luồng Systolic Array**.
+- **Trực quan & Đồng nhất:** Mỗi slide tối đa **3 ý chính** kèm 1 hình/bảng/đồ thị; thống nhất bảng màu và font chữ; đặt tên người phụ trách ở góc dưới slide.
 
 ## 3.2. Bảng phân công chi tiết giữa Làm Slide và Thuyết trình
 *(Được đồng bộ chuẩn xác 100% với Mục 5 trong README.md)*
 
-| Lượt | Nội dung trình bày | Người làm Slide (Canva) | Người thuyết trình | Trọng tâm nội dung |
-|---|---|---|---|---|
-| **1** | **Phần I:** Bối cảnh, mục tiêu, metrics, CPU nền (naive & tiled) | **Nam** | **Nam** | Memory Wall, công thức metrics, đo đạc baseline CPU |
-| **2** | **Phần II:** CPU tối ưu OpenMP, SIMD, Ablation study (Câu 1) | **Khương** | **Khương** | Khai thác đa lõi, vector hóa AVX2, trả lời Câu hỏi 1 |
-| **3** | **Phần III:** GPU CUDA, cuBLAS, chi phí copy PCIe, điểm hòa vốn $N^*$ (Câu 2) | **Long** | **Long** | Xử lý song song SIMT, bóc tách thời gian PCIe vs Kernel, trả lời Câu hỏi 2 |
-| **4** | **Phần IV:** Systolic Array chuyên dụng mảng 8×8 WS (Câu 3) | **Huy** | **Huy** | Vi kiến trúc PE, mảng 8×8, skewing, waveform GTKWave, chu kỳ $C(N)$, trả lời Câu hỏi 3 |
-| **5** | **Phần V:** Bảng ma trận đánh đổi 3 kiến trúc, hạn chế, kết luận chung (Câu 4) | **Cương** | **Cương** | Trade-off Matrix toàn diện 5 tiêu chí, hạn chế thực nghiệm, trả lời Câu hỏi 4 |
-| **6** | **Hỏi đáp (Q&A - 15 phút):** Trao đổi & phản biện với Hội đồng | Cả nhóm | Người phụ trách phần được hỏi | Toàn bộ đồ án |
+| Lượt | Nội dung trình bày | Người làm Slide & Thuyết trình | Trọng tâm & Demo sản phẩm |
+|---|---|---|---|
+| **1** | **Giới thiệu, Yêu cầu & CPU nền** | **Nam** | Bối cảnh, chủ đề, 3 kiến trúc thiết kế/mô hình/mô phỏng, yêu cầu, metrics, Naive vs Tiled. |
+| **2** | **Tối ưu hóa CPU (Câu 1)** | **Khương** | OpenMP, SIMD AVX2/FMA ($i-k-j$), Ablation Study, **demo biên dịch/chạy `bench_cpu`**. |
+| **3** | **Tăng tốc GPU (Câu 2)** | **Long** | SIMT CUDA naive vs `cuBLAS`, $T_{\text{H2D}}/T_{\text{kernel}}/T_{\text{D2H}}$, điểm hòa vốn $N^*$, **demo Notebook Colab**. |
+| **4** | **Systolic Array Verilog HDL (Câu 3)** | **Huy** | Dataflow WS, lý do triển khai mảng $8 \times 8$, PE & lưới 2D, Skewing, **demo `iverilog` + GTKWave**, chu kỳ $C(N)$. |
+| **5** | **So sánh chéo, Lý do phạm vi & Kết luận (Câu 4)** | **Cương** | Tổng hợp 3 nền tảng, Trade-off Matrix 5 tiêu chí, lý do phạm vi triển khai một phần, hạn chế & kết luận. |
+| **6** | **Hỏi đáp (Q&A — 15 phút)** | **Cả nhóm** | Thành viên phụ trách phần nào chủ động trả lời phản biện câu hỏi của Giảng viên và lớp. |
 
+
+# 4. Lịch trình Tuần 13–18, Definition of Done & Checklist Nộp MS Teams
+
+## 4.1. Lịch trình thực hiện giai đoạn nước rút (25/11/2026 – 30/12/2026)
+
+| Tuần | Mốc thời gian | Công việc trọng tâm | Người chịu trách nhiệm |
+|---|---|---|---|
+| **Tuần 13** | 25/11 – 01/12/2026 | • **Nam** hoàn thiện và push `matmul.h`, `matmul_naive.c`, `matmul_tiled.c`, `bench_main.c`, `Makefile`, chạy đo `cpu_bench.csv`.<br>• **Khương** chạy đo `cpu_opt_bench.csv`.<br>• **Huy** hoàn thành Mục IV.3–IV.4 (`matmul_ref.py`, `tb_systolic.v`, chạy `iverilog`/GTKWave, `systolic_cycles.csv`).<br>• Xem lịch thuyết trình chính thức của Nhóm 15 trong `GroupProject_381.xlsx`. | Nam, Khương, Huy |
+| **Tuần 14** | 02/12 – 08/12/2026 | • **Long** hoàn thiện code CUDA/Colab notebook, chạy đo `gpu_bench.csv` và push repo.<br>• Cả 5 thành viên push file cấu hình `results/env_<ten>.json`.<br>• **Cương** viết script `scripts/plot_compare.py`, sinh đầy đủ biểu đồ vào `results/plots/`. | Long, Cương, Cả nhóm |
+| **Tuần 15** | 09/12 – 15/12/2026 | • Hoàn thành viết đầy đủ nội dung các **Chương 1, 2, 3** và **Phụ lục A–C** trên Google Docs.<br>• Hoàn thiện Slide Canva kèm kịch bản Demo (CPU/GPU/GTKWave) và tổng duyệt thử 45 phút (30p + 15p). | Cả nhóm |
+| **Tuần 16** | 16/12 – 20/12/2026 | • Chốt **1–2 trang Tóm tắt đóng góp thành viên (từ cao đến thấp)**.<br>• **Khương** rà soát chuẩn định dạng **APA**, hợp nhất **Tài liệu tham khảo kiểu số IEEE `[1]`**, kiểm tra mục lục và danh mục hình/bảng.<br>• Thuyết trình trước lớp (nếu lịch rơi vào Tuần 13–17 theo `GroupProject_381.xlsx`). | Huy, Khương, Cả nhóm |
+| **Tuần 17** | 21/12 – **23/12/2026** | • Đóng gói và rà soát chéo bộ 4 sản phẩm nộp **MS Teams** (đảm bảo nộp **trước ngày 24/12/2026** — tránh sát giờ chót).<br>• Chốt tag hoàn thiện trên GitHub `ndh-mi1/projectKTMT`. | Huy & Khương |
+| **Tuần 18** | 24/12 – 30/12/2026 | • **Hạn chót quy định của Khoa/Thầy: trước 24/12/2026.** Dự phòng bổ sung/phản hồi nếu Giảng viên yêu cầu sau khi nộp trên Teams. | Huy & Cả nhóm |
+
+## 4.2. Checklist đóng gói nộp trực tuyến qua MS Teams (TRƯỚC 24/12/2026)
+
+Khi nộp trên Assignment MS Teams, Nhóm trưởng (**Huy**) và **Khương** kiểm tra đủ **4 thành phần bắt buộc** sau:
+
+1. **Báo cáo cuối kỳ (Bản mềm `.pdf` và `.docx`):**
+   - [ ] Có **1–2 trang Tóm tắt đóng góp của từng thành viên theo thứ tự từ cao đến thấp** ở đầu báo cáo (trước nội dung chính).
+   - [ ] Đủ 5 phần nội dung chuẩn: **Giới thiệu** (tên, mô tả, bài toán/phần cứng thiết kế-mô hình-mô phỏng, yêu cầu) $\to$ **Phương pháp luận** (cấu trúc, chức năng, ngôn ngữ HDL Verilog & công cụ chọn) $\to$ **Kết quả và Bàn luận** (số liệu, đồ thị, GTKWave, phân tích chứng minh làm chủ công nghệ/công cụ) $\to$ **Tài liệu tham khảo** $\to$ **Phụ lục** (có **Kế hoạch làm việc của nhóm**).
+   - [ ] Định dạng chuẩn **APA** và trích dẫn/tài liệu tham khảo kiểu đánh số **IEEE `[1]`, `[2]`**.
+2. **Slide thuyết trình (Bản mềm `.pdf` / `.pptx` xuất từ Canva):**
+   - [ ] Thể hiện đủ 4 ý bắt buộc: Bối cảnh & chủ đề; Bài toán & giải pháp; Lý do triển khai toàn bộ/một phần sản phẩm; Minh họa/mô phỏng sản phẩm.
+   - [ ] Đánh dấu tên người phụ trách tương ứng 5/5 thành viên cùng trình bày trong khung 45 phút (30p + 15p).
+3. **Mã nguồn (Code):**
+   - [ ] Đầy đủ, biên dịch & chạy không lỗi: `cpu/`, `gpu/`, `systolic/` (`pe.v`, `systolic_array.v`, `tb_systolic.v`, `matmul_ref.py`), `scripts/`.
+   - [ ] Kèm hướng dẫn chạy & tái lập kết quả rõ ràng (`README.md`, `run_sim.ps1`/`sh`, `Makefile`).
+4. **Các tài liệu liên quan:**
+   - [ ] Dữ liệu thực nghiệm đầy đủ trong `results/*.csv`, `results/env_*.json`, ảnh biểu đồ `results/plots/*.png`, ảnh chụp sóng GTKWave (và video/HTML mô phỏng minh họa nếu đính kèm).
+   - [ ] Link công khai Google Docs, Canva Slide và GitHub Repo `https://github.com/ndh-mi1/projectKTMT`.

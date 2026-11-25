@@ -30,7 +30,7 @@
    - Dùng vòng lặp `generate` lồng nhau (hàng `r`, cột `c`) để kết nối lưới $8 \times 8$ PEs.
    - Kết nối dây ngang: `a_out` của PE $(r, c)$ nối vào `a_in` của PE $(r, c+1)$.
    - Kết nối dây dọc: `psum_out` của PE $(r, c)$ nối vào `psum_in` của PE $(r+1, c)$. Hàng trên cùng ($r=0$) nhận `psum_in = 0`.
-   - Đầu ra đáy mảng: Hàng cuối ($r=7$) xuất kết quả ra bus đầu ra `c_bus`.
+   - Đầu ra đáy mảng: Hàng cuối ($r=7$) xuất kết quả ra bus đầu ra `c_out`.
 
 ### 2.2. Testbench & Kiểm tra tính đúng đắn (`tb/` và `ref/`)
 1. **`ref/matmul_ref.py`:**
@@ -69,8 +69,12 @@ Mở file `wave.vcd` sinh ra bằng GTKWave để chụp ảnh dạng sóng ph�
 
 ---
 
-## 5. Bộ 5 câu hỏi phản biện trọng tâm Phần IV (Huy tự tin bảo vệ trước Hội đồng)
-Huy chuẩn bị sẵn sàng câu trả lời cho 5 câu hỏi phản biện cốt lõi của Phần IV để làm chủ phần bảo vệ của mình:
+## 5. Đóng góp vào Báo cáo cuối kỳ (APA/IEEE) & Thuyết trình (Câu hỏi 3)
+- **Ánh xạ vào Báo cáo cuối kỳ (chuẩn APA & trích dẫn đánh số IEEE `[1]`):**
+  - Mục **IV.1–IV.2** đã hoàn thiện (nguyên lý Systolic Array, Weight-Stationary, lý do triển khai mảng $8 \times 8$, vi kiến trúc PE `int16`/`int32`, ghép lưới `generate`, Skewing) đưa vào **Chương 2 (Phương pháp luận — Sử dụng ngôn ngữ mô tả phần cứng Verilog HDL & công cụ Icarus/GTKWave)**, bổ sung trích dẫn IEEE `[1]` cho Kung & Leiserson (1982) và Jouppi et al. (Google TPU).
+  - Mục **IV.3–IV.6** (testbench `tb_systolic.v`, đối chiếu bit-exact `matmul_ref.py`, ảnh chụp waveform GTKWave, công thức $C(N)$ và PE Utilization) đưa vào **Chương 3 (Kết quả & Bàn luận)**.
+- **Thuyết trình (Lượt 4):** Huy tự trình bày toàn bộ phần Systolic Array, nhấn mạnh **lý do chỉ triển khai RTL lõi $8 \times 8$ WS** (thay vì full TPU/board FPGA) và **demo chạy `run_sim.ps1` + soi sóng GTKWave** trực tiếp trước lớp.
+- **Bộ 5 câu hỏi phản biện trọng tâm (Huy làm chủ khi Q&A):**
 1. *Tại sao lại chọn kiến trúc Weight-Stationary mà không phải Output-Stationary?*
 2. *Tại sao mảng lại chọn $8 \times 8$ mà không phải $16 \times 16$ hay lớn hơn?*
 3. *Hiện tượng skewing (lệch pha) đường chéo là gì, tại sao bắt buộc phải có?*

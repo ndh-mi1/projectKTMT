@@ -1,6 +1,6 @@
 # Metric chung — khung so sánh
 
-Mọi module xuất kết quả theo schema dưới đây. Nam, Khương, Long, Huy tự ghi CSV phần mình (mỗi người một file riêng); Cương dùng các CSV đó cho Phần V (Câu 4) và không sửa chúng.
+Mọi module xuất kết quả theo schema dưới đây. Nam, Khương, Long, Huy tự ghi CSV phần mình (mỗi người một file riêng); Cương dùng các CSV đó cho mục **So sánh chéo (Chương 3 — Câu hỏi 4)** và không sửa chúng.
 
 ## 1. Định nghĩa chung
 

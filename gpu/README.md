@@ -70,3 +70,12 @@ Sau khi có số liệu của CPU (từ Nam và Khương), Long vẽ đường s
 
 ## 5. File cấu hình môi trường
 Chép file `results/env.template.json` thành `results/env_long.json`, ghi rõ model GPU (ví dụ: `Tesla T4 16GB`), phiên bản CUDA, Driver và compiler.
+
+---
+
+## 6. Đóng góp vào Báo cáo cuối kỳ (APA/IEEE) & Thuyết trình
+- **Báo cáo cuối kỳ (chuẩn APA & trích dẫn đánh số IEEE `[1]`):**
+  - **Chương 2 (Phương pháp luận):** Mô tả kiến trúc SIMT GPU, thiết kế kernel `cuda_naive`, cách tích hợp `cuBLAS` và công cụ đo `cudaEvent_t` trên Google Colab; giải thích lý do chỉ khảo sát 2 mức (`naive` vs `cuBLAS`).
+  - **Chương 3 (Kết quả & Bàn luận):** Phân tích bảng $T_{\text{kernel}}$ vs $T_{\text{E2E}}$, đồ thị hòa vốn $N^*$ và trả lời dứt khoát Câu hỏi 2; trích dẫn tài liệu NVIDIA CUDA theo chuẩn IEEE `[1]`.
+- **Thuyết trình (Lượt 3):** Trình bày giải pháp GPU, phân tích nút thắt PCIe và **demo/minh họa Notebook Colab** (`gpu/notebooks/`).
+- **Mốc hoàn thành:** Push mã nguồn `.cu`, notebook `.ipynb`, `results/gpu_bench.csv` và `results/env_long.json` lên GitHub đúng lộ trình Tuần 14 (kịp hạn nộp Teams trước `24/12/2026`).

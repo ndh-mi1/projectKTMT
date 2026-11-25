@@ -102,3 +102,12 @@ Mỗi bạn sau khi hoàn thành đo đạc, chép file `results/env.template.js
 - Nam: `results/env_nam.json`
 - Khương: `results/env_khuong.json`  
 Điền đúng thông tin CPU, số nhân/luồng thực, RAM và phiên bản compiler để đảm bảo tính tái lập.
+
+---
+
+## 5. Đóng góp vào Báo cáo cuối kỳ (APA/IEEE) & Thuyết trình
+- **Báo cáo cuối kỳ (trên Google Docs, chuẩn APA & trích dẫn đánh số IEEE `[1]`):**
+  - **Nam:** Viết **Chương 1 (Giới thiệu)** (tên/mô tả dự án 3 kiến trúc kèm phần cứng Systolic Array, yêu cầu bài toán, 4 câu hỏi nghiên cứu, FLOPs/GFLOPS) + nội dung **CPU nền (Naive vs Tiled)** trong Chương 2 & Chương 3.
+  - **Khương:** Viết nội dung **CPU tối ưu (OpenMP, SIMD AVX2/FMA $i-k-j$, Ablation Study)** trong Chương 2 & Chương 3; tổng hợp **Tài liệu tham khảo chuẩn IEEE**, rà soát định dạng **APA** toàn bài và xuất PDF nộp MS Teams trước `24/12/2026`.
+- **Thuyết trình (45 phút = 30p + 15p Q&A):** Nam trình bày Lượt 1 (Giới thiệu, Yêu cầu & CPU nền); Khương trình bày Lượt 2 (Tối ưu CPU, Câu hỏi 1 & **demo biên dịch/chạy `bench_cpu`**).
+- **Mốc hoàn thành code & CSV:** Push đầy đủ mã nguồn (`matmul.h`, `matmul_naive.c`, `matmul_tiled.c`, `bench_main.c`, `Makefile`) và `cpu_bench.csv`, `cpu_opt_bench.csv` lên GitHub kịp lộ trình Tuần 13–14 để Cương vẽ biểu đồ.
