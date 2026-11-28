@@ -52,27 +52,27 @@ Thực nghiệm được tự động hóa trên Google Colab qua notebook `gpu/
 
 #### 3.2.1. Tổng hợp số liệu thực nghiệm trên GPU
 
-Thực nghiệm được tiến hành trên môi trường Google Colab với GPU **[ĐIỀN TÊN GPU TỪ `results/env_long.json`, ví dụ: NVIDIA Tesla T4 16GB]**, phiên bản CUDA **[ĐIỀN TỪ `env_long.json`]**. Bảng 1 trình bày thời gian từng pha ($T_{\text{H2D}}, T_{\text{kernel}}, T_{\text{D2H}}, T_{\text{E2E}}$) và thông lượng đạt được của hai cài đặt `cuda_naive` và `cublas` trên toàn dải $N \in [64, 4096]$.
+Thực nghiệm được tiến hành trên môi trường Google Colab với GPU **NVIDIA Tesla T4 16GB** (`15360 MB`, Compute Capability `7.5`, Driver `580.82.07`), phiên bản CUDA **13.0** (`nvcc 13.0 -O3 -std=c++14`). Bảng 1 trình bày thời gian từng pha ($T_{\text{H2D}}, T_{\text{kernel}}, T_{\text{D2H}}, T_{\text{E2E}}$) và thông lượng đạt được của hai cài đặt `cuda_naive` và `cublas` trên toàn dải $N \in [64, 4096]$.
 
 **Bảng 1**  
-*Kết quả đo thời gian và thông lượng nhân ma trận `float32` trên GPU (trung vị qua 7 lần đo)*
+*Kết quả đo thời gian và thông lượng nhân ma trận `float32` trên GPU NVIDIA Tesla T4 (trung vị qua 7 lần đo)*
 
 | Thuật toán | $N$ | $T_{\text{H2D}}$ (ms) | $T_{\text{kernel}}$ (ms) | $T_{\text{D2H}}$ (ms) | $T_{\text{E2E}}$ (ms) | Tỷ trọng PCIe (%) | $\text{GFLOPS}_{\text{kernel}}$ | $\text{GFLOPS}_{\text{E2E}}$ | Đúng (`correct`) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|:---:|
-| `cuda_naive` | 64 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cublas` | 64 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cuda_naive` | 128 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cublas` | 128 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cuda_naive` | 256 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cublas` | 256 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cuda_naive` | 512 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cublas` | 512 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cuda_naive` | 1024 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cublas` | 1024 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cuda_naive` | 2048 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cublas` | 2048 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cuda_naive` | 4096 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
-| `cublas` | 4096 | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] | [ĐIỀN]% | [ĐIỀN] | [ĐIỀN] | [ĐIỀN] |
+| `cuda_naive` | 64 | 0.0278 | 0.0109 | 0.0148 | 0.0535 | 79.6% | 48.05 | 9.79 | 1 |
+| `cublas` | 64 | 0.0282 | 0.0153 | 0.0156 | 0.0590 | 74.2% | 34.35 | 8.89 | 1 |
+| `cuda_naive` | 128 | 0.0689 | 0.0205 | 0.0288 | 0.1182 | 82.7% | 204.80 | 35.48 | 1 |
+| `cublas` | 128 | 0.0680 | 0.0179 | 0.0278 | 0.1137 | 84.3% | 234.90 | 36.90 | 1 |
+| `cuda_naive` | 256 | 0.1544 | 0.1066 | 0.0878 | 0.3488 | 69.4% | 314.79 | 96.19 | 1 |
+| `cublas` | 256 | 0.1546 | 0.0462 | 0.0793 | 0.2800 | 83.5% | 726.66 | 119.82 | 1 |
+| `cuda_naive` | 512 | 0.5760 | 0.7180 | 0.2973 | 1.5914 | 54.9% | 373.84 | 168.68 | 1 |
+| `cublas` | 512 | 0.5854 | 0.1010 | 0.3122 | 0.9986 | 89.9% | 2657.15 | 268.82 | 1 |
+| `cuda_naive` | 1024 | 1.8337 | 5.5842 | 1.0054 | 8.4233 | 33.7% | 384.56 | 254.95 | 1 |
+| `cublas` | 1024 | 1.8762 | 0.5390 | 1.0214 | 3.4366 | 84.3% | 3984.14 | 624.88 | 1 |
+| `cuda_naive` | 2048 | 7.3589 | 36.3520 | 3.6646 | 47.3755 | 23.3% | 472.60 | 362.63 | 1 |
+| `cublas` | 2048 | 7.1639 | 2.4423 | 3.6196 | 13.2258 | 81.5% | 7034.20 | 1298.97 | 1 |
+| `cuda_naive` | 4096 | 28.6824 | 319.2826 | 14.2237 | 362.1887 | 11.8% | 430.46 | 379.47 | 1 |
+| `cublas` | 4096 | 30.1898 | 19.9728 | 15.1605 | 65.3231 | 69.4% | 6881.31 | 2103.99 | 1 |
 
 *Ghi chú.* Số liệu trích xuất trực tiếp từ `results/gpu_bench.csv`. Tỷ trọng PCIe được tính bằng $(T_{\text{H2D}} + T_{\text{D2H}}) / T_{\text{E2E}} \times 100\%$. Toàn bộ 14 cấu hình đo đều đạt kiểm chứng đúng đắn `correct = 1` ($\max \text{rel\_err} \le 10^{-3}$).
 
@@ -85,14 +85,14 @@ Thực nghiệm được tiến hành trên môi trường Google Colab với GP
 
 Từ Bảng 1 và Hình 1, có hai quy luật kiến trúc nổi bật cần làm rõ:
 
-1. **Khoảng cách giữa `cuda_naive` và `cuBLAS`:** Ở kích thước lớn ($N = 2048, 4096$), `cuBLAS` đạt **[ĐIỀN]** GFLOPS (kernel), nhanh hơn `cuda_naive` khoảng **[ĐIỀN]x**. Nguyên nhân là `cuda_naive` không dùng Shared Memory hay Register Tiling nên phải truy xuất Global Memory liên tục (bị giới hạn bởi băng thông VRAM theo trần Roofline $\text{GFLOPS}_{\text{attainable}} = \min(\text{Peak}_{\text{compute}}, I \cdot B_{\text{VRAM}})$ [1], [2]). Ngược lại, `cuBLAS` chia khối dữ liệu vào Shared Memory và thanh ghi của từng SM, đẩy cường độ số học nội bộ lên cao để tiệm cận trần tính toán FP32 của GPU.
+1. **Khoảng cách giữa `cuda_naive` và `cuBLAS`:** Ở kích thước lớn, `cuBLAS` đạt **7034.20 GFLOPS** (kernel) tại $N = 2048$ (nhanh hơn `cuda_naive` **14.88x**) và **6881.31 GFLOPS** tại $N = 4096$ (nhanh hơn `cuda_naive` **15.99x**, `19.9728 ms` so với `319.2826 ms`). Nguyên nhân là `cuda_naive` không dùng Shared Memory hay Register Tiling nên chỉ đạt quanh 384–473 GFLOPS vì phải truy xuất Global Memory liên tục (bị giới hạn bởi băng thông VRAM theo trần Roofline $\text{GFLOPS}_{\text{attainable}} = \min(\text{Peak}_{\text{compute}}, I \cdot B_{\text{VRAM}})$ [1], [2]). Ngược lại, `cuBLAS` chia khối dữ liệu vào Shared Memory và thanh ghi của từng SM, đẩy cường độ số học nội bộ lên cao để tiệm cận trần tính toán FP32 của Tesla T4 (~8.1 TFLOPS lý thuyết).
 2. **Sự thống trị của chi phí truyền dữ liệu PCIe ở $N$ nhỏ và phép chứng minh theo Cường độ số học:**  
    Xét khối lượng tính toán $\text{FLOPs}(N) = 2N^3$ so với tổng lượng dữ liệu bắt buộc truyền qua bus PCIe (đọc $A, B$ và ghi $C$, mỗi phần tử 4 byte `float32`):
    $$\text{Bytes}_{\text{PCIe}}(N) = 3 \times N^2 \times 4 = 12N^2 \text{ bytes}$$
    Do đó, **cường độ số học trên giao diện PCIe** tăng tuyến tính theo $N$:
    $$I_{\text{PCIe}}(N) = \frac{2N^3}{12N^2} = \frac{N}{6} \text{ [FLOPs/Byte]}$$
-   - Khi $N = 64$: $I_{\text{PCIe}} \approx 10.67$ FLOPs/Byte và tổng số phép tính chỉ khoảng $5.24 \times 10^5$ FLOPs. Thời gian tính toán thuần trên GPU chỉ cỡ vài phần trăm mili-giây, trong khi chi phí khởi động kernel, đồng bộ và truyền dữ liệu qua PCIe chiếm tới **[ĐIỀN]%** tổng thời gian $T_{\text{E2E}}$ — thậm chí lớn hơn đáng kể so với chi phí chính phép nhân. Kết hợp với việc lưới `cuda_naive` tại $N = 64$ chỉ có $(64/16)^2 = 16$ thread blocks (không đủ lấp đầy toàn bộ số SM của GPU), phần lớn đơn vị tính toán bị bỏ không.
-   - Khi $N \ge 1024$: Khối lượng tính toán tăng theo bậc ba ($O(N^3)$) trong khi dung lượng truyền PCIe chỉ tăng theo bậc hai ($O(N^2)$). Nhờ $I_{\text{PCIe}}(N)$ tăng lên hàng trăm FLOPs/Byte, chi phí PCIe dần bị khấu hao: với `cuda_naive`, tỷ trọng PCIe giảm xuống còn **[ĐIỀN]%** ở $N = 4096$; tuy nhiên với `cuBLAS` (vốn có $T_{\text{kernel}}$ cực ngắn nhờ tối ưu SM), thời gian copy qua PCIe vẫn chiếm một tỷ phần đáng kể (**[ĐIỀN]%** ở $N = 4096$). Điều này chứng minh nhận định trong [1], [2] rằng tối ưu hóa kernel tính toán mà bỏ qua tối ưu luồng dữ liệu Host–Device (như giữ tensor lâu dài trên VRAM, gộp batch hoặc dùng `cudaMemcpyAsync` với pinned memory) sẽ bị trần PCIe kìm hãm mạnh thông lượng toàn trình $\text{GFLOPS}_{\text{E2E}}$.
+   - Khi $N = 64$: $I_{\text{PCIe}} \approx 10.67$ FLOPs/Byte và tổng số phép tính chỉ khoảng $5.24 \times 10^5$ FLOPs. Thời gian tính toán thuần trên GPU chỉ mất `0.0109 ms` (`cuda_naive`) và `0.0153 ms` (`cublas`), trong khi chi phí truyền dữ liệu qua PCIe chiếm tới **79.6%** (`cuda_naive`) và **74.2%** (`cublas`) tổng thời gian $T_{\text{E2E}}$ (và lên tới **89.9%** ở $N = 512$ đối với `cublas`). Kết hợp với việc lưới `cuda_naive` tại $N = 64$ chỉ có $(64/16)^2 = 16$ thread blocks (không đủ lấp đầy 40 SM của Tesla T4), phần lớn đơn vị tính toán bị bỏ không.
+   - Khi $N \ge 1024$: Khối lượng tính toán tăng theo bậc ba ($O(N^3)$) trong khi dung lượng truyền PCIe chỉ tăng theo bậc hai ($O(N^2)$). Nhờ $I_{\text{PCIe}}(N)$ tăng lên $682.7$ FLOPs/Byte tại $N = 4096$, chi phí PCIe dần bị khấu hao: với `cuda_naive`, tỷ trọng PCIe giảm xuống còn **11.8%** ở $N = 4096$; tuy nhiên với `cuBLAS` (vốn có $T_{\text{kernel}}$ cực ngắn chỉ `19.9728 ms`), thời gian copy qua PCIe (`45.3503 ms`) vẫn chiếm **69.4%** tổng thời gian E2E (kéo $\text{GFLOPS}_{\text{E2E}}$ xuống `2103.99` so với `6881.31` $\text{GFLOPS}_{\text{kernel}}$). Điều này chứng minh nhận định trong [1], [2] rằng tối ưu hóa kernel tính toán mà bỏ qua tối ưu luồng dữ liệu Host–Device (như giữ tensor lâu dài trên VRAM, gộp batch hoặc dùng `cudaMemcpyAsync` với pinned memory) sẽ bị trần PCIe kìm hãm mạnh thông lượng toàn trình $\text{GFLOPS}_{\text{E2E}}$.
 
 #### 3.2.3. Xác định điểm hòa vốn $N^*$ giữa GPU và CPU (Trả lời Câu hỏi 2)
 
@@ -104,10 +104,11 @@ $$N^*_{\text{kernel}} = \min \{ N \mid T^{\text{GPU}}_{\text{kernel}}(N) < T^*_{
 `[CHÈN ẢNH gpu_vs_cpu_breakeven.png TỪ results/plots/ SAU KHI CƯƠNG TỔNG HỢP]`  
 *Ghi chú.* Trục hoành biểu diễn $N$ theo thang $\log_2$, trục tung biểu diễn thời gian (ms) theo thang $\log_{10}$.
 
-Đối chiếu số liệu thực nghiệm trên phần cứng cụ thể của nhóm (**[ĐIỀN CPU laptop của Khương]** vs **[ĐIỀN GPU Colab của Long]**):
+Đối chiếu số liệu thực nghiệm trên phần cứng cụ thể của nhóm (**[CHỜ `results/env_khuong.json` & `results/cpu_opt_bench.csv` CỦA KHƯƠNG]** vs **NVIDIA Tesla T4 16GB trên Google Colab trong `results/env_long.json`**):
 - **Tại $N$ nhỏ ($N < N^*_{\text{E2E}}$):** CPU chiến thắng GPU vì CPU truy cập trực tiếp ma trận nằm gọn trong bộ nhớ đệm L1/L2/L3 (với $N=64, 128$, tổng kích thước $3N^2 \times 4$ bytes chỉ từ $48\text{ KB}$ đến $192\text{ KB}$, vừa khít cache) và không phải chịu chi phí truyền dữ liệu qua bus PCIe hay độ trễ khởi động kernel.
-- **Điểm hòa vốn thuần tính toán $N^*_{\text{kernel}}$:** Với `cuBLAS`, $N^*_{\text{kernel}} =$ **[ĐIỀN TỪ BẢNG SO SÁNH]**; với `cuda_naive`, $N^*_{\text{kernel}} =$ **[ĐIỀN TỪ BẢNG SO SÁNH]**.
-- **Điểm hòa vốn toàn trình $N^*_{\text{E2E}}$:** Khi cộng thêm $T_{\text{H2D}} + T_{\text{D2H}}$, điểm hòa vốn bị đẩy lên mức lớn hơn: $N^*_{\text{E2E}} =$ **[ĐIỀN TỪ BẢNG SO SÁNH]** đối với `cuBLAS` và **[ĐIỀN TỪ BẢNG SO SÁNH]** đối với `cuda_naive`. Từ mốc $N \ge N^*_{\text{E2E}}$ trở đi, GPU chính thức vượt trội hoàn toàn cả về thời gian thực tế lẫn hiệu suất mở rộng, đạt mức tăng tốc lên tới **[ĐIỀN]x** so với CPU đa nhân SIMD ở $N = 2048$.
+- **Điểm hòa vốn thuần tính toán $N^*_{\text{kernel}}$ (so với CPU laptop chính thức của nhóm):** Với `cuBLAS`, $N^*_{\text{kernel}} =$ **[CHỜ `cpu_opt_bench.csv` CỦA KHƯƠNG]**; với `cuda_naive`, $N^*_{\text{kernel}} =$ **[CHỜ `cpu_opt_bench.csv` CỦA KHƯƠNG]**.
+- **Điểm hòa vốn toàn trình $N^*_{\text{E2E}}$ (so với CPU laptop chính thức của nhóm):** Khi cộng thêm $T_{\text{H2D}} + T_{\text{D2H}}$, điểm hòa vốn bị đẩy lên mức lớn hơn: $N^*_{\text{E2E}} =$ **[CHỜ `cpu_opt_bench.csv` CỦA KHƯƠNG]** đối với `cuBLAS` và **[CHỜ `cpu_opt_bench.csv` CỦA KHƯƠNG]** đối với `cuda_naive`. Từ mốc $N \ge N^*_{\text{E2E}}$ trở đi, GPU vượt trội hoàn toàn cả về thời gian thực tế lẫn hiệu suất mở rộng (ví dụ `cuBLAS` chỉ mất `13.23 ms` E2E tại $N=2048$ và `65.32 ms` E2E tại $N=4096$).
+- *Tham chiếu tạm trên CPU VM của Google Colab (`Intel(R) Xeon(R) CPU @ 2.00GHz`, 2 cores — NumPy/OpenBLAS):* Khi chạy thử đối chứng ngay trên CPU Colab (không thay thế CPU laptop chính thức trong `cpu_opt_bench.csv`), NumPy mất `0.0114 ms` ($N=64$), `7.92 ms` ($N=128$), `35.63 ms` ($N=1024$), `217.45 ms` ($N=2048$) và `1163.87 ms` ($N=4096$), cho điểm hòa vốn tham chiếu tạm $N^*_{\text{E2E}} = 128$ (do CPU VM 2 nhân yếu hơn đáng kể so với CPU laptop đa nhân hiện đại; khi Khương đẩy `cpu_opt_bench.csv`, nhóm sẽ thay bằng $N^*$ chính thức).
 
 > **Lưu ý về tính phụ thuộc phần cứng của $N^*$:** Điểm hòa vốn $N^*$ không phải một hằng số bất biến mà phụ thuộc vào cặp phần cứng đối chiếu (tốc độ CPU đa nhân/AVX2 so với thế hệ GPU như Tesla T4/L4 và băng thông khe PCIe trên máy chủ Colab). Do đó, nhóm báo cáo rõ **khoảng hòa vốn** gắn với thông số cấu hình trong `results/env_khuong.json` và `results/env_long.json` để đảm bảo tính trung thực khoa học.
 

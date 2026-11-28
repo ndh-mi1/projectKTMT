@@ -32,18 +32,18 @@
 - **Trực quan:** Đoạn code ngắn gọn 6 dòng của `matmul_naive_kernel` và lời gọi `cublasSgemm(..., d_B, N, d_A, N, ...)`.
 
 ### Slide 4 — Kết quả thực nghiệm: Phân rã thời gian & PCIe Overhead
-- **Tiêu đề:** Kết quả GPU trên Google Colab: `Kernel-only` vs `End-to-End`
+- **Tiêu đề:** Kết quả GPU trên Google Colab (Tesla T4): `Kernel-only` vs `End-to-End`
 - **3 ý chính:**
-  1. Ở $N$ nhỏ ($64 \dots 256$): Chi phí copy PCIe & khởi động chiếm **[ĐIỀN]%** tổng $T_{\text{E2E}}$.
-  2. Ở $N$ lớn ($2048 \dots 4096$): Độ phức tạp tính toán $O(N^3)$ áp đảo truyền dữ liệu $O(N^2)$.
-  3. `cuBLAS` nhanh hơn `cuda_naive` **[ĐIỀN]x** ở $N = 4096$ nhưng bị PCIe kìm hãm rõ ở thông lượng E2E.
+  1. Ở $N$ nhỏ ($64 \dots 256$): Chi phí copy PCIe chiếm **74.2%–84.3%** (`cublas`) và **69.4%–82.7%** (`cuda_naive`) tổng $T_{\text{E2E}}$.
+  2. Ở $N$ lớn ($2048 \dots 4096$): Độ phức tạp $O(N^3)$ áp đảo $O(N^2)$ — tỷ trọng PCIe của `cuda_naive` giảm còn **11.8%** ở $N=4096$.
+  3. `cuBLAS` đạt **7034.20 GFLOPS** ($N=2048$), nhanh hơn `cuda_naive` **15.99x** ở $N=4096$ nhưng PCIe vẫn chiếm **69.4%** $T_{\text{E2E}}$ của `cuBLAS`.
 - **Trực quan:** Biểu đồ `gpu_time_breakdown.png` (Stacked bar chart tỷ trọng $T_{\text{H2D}}, T_{\text{kernel}}, T_{\text{D2H}}$).
 
 ### Slide 5 — Xác định điểm hòa vốn $N^*$ (Trả lời Câu hỏi 2)
 - **Tiêu đề:** Điểm hòa vốn CPU vs GPU: $N^*_{\text{kernel}}$ và $N^*_{\text{E2E}}$
 - **3 ý chính:**
   1. $N < N^*$: CPU thắng nhờ ma trận nằm gọn trong L1/L2/L3 Cache và không tốn copy PCIe.
-  2. Điểm hòa vốn thuần tính toán: $N^*_{\text{kernel}} =$ **[ĐIỀN]**; điểm hòa vốn toàn trình: $N^*_{\text{E2E}} =$ **[ĐIỀN]**.
+  2. Điểm hòa vốn thuần tính toán: $N^*_{\text{kernel}} =$ **[CHỜ `cpu_opt_bench.csv`]**; toàn trình: $N^*_{\text{E2E}} =$ **[CHỜ `cpu_opt_bench.csv`]** *(tham chiếu tạm trên Colab Xeon 2-core: $N^*_{\text{E2E}} = 128$)*.
   3. Kết luận Câu 2: Chỉ nên đẩy tác vụ lên GPU khi $N \ge N^*_{\text{E2E}}$ hoặc giữ dữ liệu lâu dài trên VRAM.
 - **Trực quan:** Biểu đồ log-log `gpu_vs_cpu_breakeven.png` đánh dấu rõ mũi tên $N^*_{\text{kernel}}$ và $N^*_{\text{E2E}}$.
 
