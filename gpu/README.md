@@ -79,3 +79,33 @@ Chép file `results/env.template.json` thành `results/env_long.json`, ghi rõ m
   - **Chương 3 (Kết quả & Bàn luận):** Phân tích bảng $T_{\text{kernel}}$ vs $T_{\text{E2E}}$, đồ thị hòa vốn $N^*$ và trả lời dứt khoát Câu hỏi 2; trích dẫn tài liệu NVIDIA CUDA theo chuẩn IEEE `[1]`.
 - **Thuyết trình (Lượt 3):** Trình bày giải pháp GPU, phân tích nút thắt PCIe và **demo/minh họa Notebook Colab** (`gpu/notebooks/`).
 - **Mốc hoàn thành:** Push mã nguồn `.cu`, notebook `.ipynb`, `results/gpu_bench.csv` và `results/env_long.json` lên GitHub đúng lộ trình Tuần 14 (kịp hạn nộp Teams trước `24/12/2026`).
+
+---
+
+## 7. Cấu trúc mã nguồn & Hướng dẫn chạy nhanh (Đã triển khai)
+
+| Thành phần | Đường dẫn | Mô tả |
+|---|---|---|
+| **CUDA Benchmark & Kernel** | `src/matmul_cuda.cu` | Cài đặt `matmul_naive_kernel` và `cublasSgemm`, đo tách bạch `h2d_ms`, `kernel_ms`, `d2h_ms`, `e2e_ms` bằng `cudaEvent_t`, kiểm chứng sai số $\le 10^{-3}$. |
+| **Tiện ích Host (C++14)** | `src/gpu_bench_utils.hpp` | Parse CLI, sinh ma trận `seed=42`, tính trung vị & GFLOPS, kiểm tra chéo CPU/GPU, xuất nối dòng vào CSV chuẩn `METRICS.md`. |
+| **Build script** | `Makefile` | Hỗ trợ `make`, `make test`, `make bench`, `make clean` (trên Linux/Google Colab). |
+| **Colab Notebook** | `notebooks/colab_matmul.ipynb` | Notebook chạy từ đầu tới cuối trên Google Colab (T4/L4/A100): kiểm tra môi trường, tạo `results/env_long.json`, biên dịch `nvcc`, sweep $N \in [64, 4096]$, xuất `results/gpu_bench.csv`, phân tích điểm hòa vốn $N^*$ và vẽ 3 biểu đồ minh họa. |
+| **Tài liệu báo cáo & Slide** | `docs/BAO_CAO_PHAN_GPU.md`<br>`docs/SLIDE_VA_DEMO_GPU.md` | Bản nháp Mục 2.3 & Mục 3.2 chuẩn APA/IEEE bám sát Patterson & Hennessy (5th Ed.) cùng kịch bản Slide Canva & Demo Lượt 3. |
+
+### Lưu ý kỹ thuật Row-major vs Column-major trong `cuBLAS`
+Ma trận `float32` trong dự án được lưu theo hàng (**row-major**), trong khi `cublasSgemm` mặc định đọc dữ liệu theo cột (**column-major**). Khi đọc một ma trận row-major $X$ dưới góc nhìn column-major, bộ nhớ đó chính là $X^T$. Áp dụng đồng nhất thức:
+$$C^T = (A \times B)^T = B^T \times A^T$$
+chương trình truyền `(d_B, d_A)` vào `cublasSgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, N, N, N, &alpha, d_B, N, d_A, N, &beta, d_C, N)` để thu được trực tiếp $C = A \times B$ theo chuẩn row-major mà không cần tốn chi phí chuyển vị bộ nhớ phụ.
+
+### Sử dụng CLI và Quy trình chạy trên Google Colab
+```bash
+# Biên dịch trong thư mục gpu/
+make
+
+# Chạy thử nhanh (demo / sanity test)
+./bin/bench_gpu --impl all --N 256 --repeats 5 --warmup 1 --out /tmp/gpu_test.csv
+
+# Chạy toàn bộ dải N = 64..4096 và ghi vào ../results/gpu_bench.csv
+./bin/bench_gpu --sweep --impl all --repeats 7 --warmup 2 --out ../results/gpu_bench.csv
+```
+Trên Google Colab, mở trực tiếp `gpu/notebooks/colab_matmul.ipynb`, chọn **Runtime -> Change runtime type -> T4 GPU**, chạy tuần tự các cell, sau đó tải `results/gpu_bench.csv` và `results/env_long.json` về máy để commit với tiền tố `[Long]`.
